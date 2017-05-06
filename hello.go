@@ -7,16 +7,12 @@ type Human struct {
   age int
 }
 
-type Humaner interface {
-  sayHello()
-}
-
 func (h Human) sayHello() {
   fmt.Printf("Hello my name is %s I'm human and I'm %d old \n",
     h.name, h.age)
 }
 
-func NewHuman(nam string, age int) Humaner {
+func NewHuman(nam string, age int) *Human {
   return &Human{ nam, age }
 }
 
@@ -25,21 +21,16 @@ type SuperHuman struct {
   message string
 }
 
-type SuperHumaner interface {
-    sayHello()
-}
-
 func (s SuperHuman) sayHello() {
   s.Human.sayHello()
   fmt.Printf("WOHOA %s \n", s.message)
 }
 
-func NewSuperHuman(mes string) SuperHumaner{
+func NewSuperHuman(mes string) *SuperHuman {
   return &SuperHuman{
     Human{"Super", 123,}, mes,
   }
 }
-
 
 func main() {
   h := NewHuman("Marek", 21)
@@ -50,4 +41,3 @@ func main() {
   s := NewSuperHuman("I'm the best")
   s.sayHello()
 }
-
