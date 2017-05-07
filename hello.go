@@ -33,7 +33,7 @@ func NewSuperHuman(mes string) *SuperHuman {
 }
 
 func main() {
-  h := NewHuman("Marek", 21)
+  h := NewHuman("Marek", 22)
   h.sayHello()
 
   fmt.Printf("\n")
