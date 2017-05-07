@@ -13,7 +13,7 @@ func (h Human) sayHello() {
 }
 
 func NewHuman(nam string, age int) *Human {
-  return &Human{ nam, age }
+  return &Human{ nam, age, }
 }
 
 type SuperHuman struct {
